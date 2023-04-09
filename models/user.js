@@ -23,7 +23,7 @@ const userSchema = new Schema({
         type: Number,
         required: false
     },
-    profileImgUrl: {
+    profile_img: {
         type: String,
         required: false
     },
@@ -42,9 +42,8 @@ const userSchema = new Schema({
         ref: 'ProfessionalInfo',
         required: false
     },
-    interests: [{
-        type: Schema.Types.ObjectId,
-        ref: 'Interest',
+    interest: [{
+        type: String,
         required: false
     }],
     followers: [{

@@ -5,9 +5,10 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
 const authRoute = require('./router/auth');
+const userRoute = require('./router/user');
 
 
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.json());
 
 app.use((req, res, next) => {
@@ -21,6 +22,7 @@ app.use((req, res, next) => {
 });
 
 app.use('/auth', authRoute);
+app.use('/user', userRoute);
 app.use('/', (req, res, next) => {
     res.status(200).json({message: 'Server is Working...'});
     next();

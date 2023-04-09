@@ -13,7 +13,6 @@ exports.signUp = async (req, res, next) => {
     const invalidInput = validationResult(req);
 
     if (!invalidInput.isEmpty()) {
-        console.log('signup', invalidInput)
         res.status(422).json({invalidInput: invalidInput})
     } else {
 
@@ -67,17 +66,17 @@ exports.login = (req, res, next) => {
                 const token = jwt.sign(
                     {
                         email: loadedUser.email,
-                        userId: loadedUser._id.toString()
+                        user_id: loadedUser._id.toString()
                     },
                     'cipher-schools',
                     {expiresIn: '1h'}
                 );
                 res.status(200).json({
                     success: true,
-                    message: 'User login Successfully',
+                    msg: 'User login Successfully',
                     token: token,
                     isAuth: true,
-                    userId: loadedUser._id,
+                    user_id: loadedUser._id,
                     email: loadedUser.email,
                     first_name: loadedUser.first_name,
                     last_name: loadedUser.last_name

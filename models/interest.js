@@ -8,15 +8,9 @@ const InterestSchema = new Schema({
         ref: 'User',
         required: true
     },
-    highest_education: {
+    interest:{
         type: String,
-        required: true,
-        default: 'None'
-    },
-    currently_doing: {
-        type: String,
-        required: true,
-        default: 'None'
+        required: false
     }
 },{timestamps:true})
 

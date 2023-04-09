@@ -8,7 +8,7 @@ const socialSchema = new Schema({
         ref: 'User',
         required: true
     },
-    linkedin:{
+    linkedIn:{
         type: String,
         required: false
     },
